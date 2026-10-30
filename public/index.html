@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>联系管理员 · 验证</title><link rel="stylesheet" href="/style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js" defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body><main>
+  <div class="symbol" aria-hidden="true">✓</div>
+  <p class="eyebrow">联系管理员</p><h1>先完成一次验证</h1>
+  <p class="intro">验证成功后，可在 24 小时内通过机器人发送消息。请勿发送密码、验证码等敏感信息。</p>
+  <section aria-label="验证进度"><p id="status" role="status" aria-live="polite">正在加载验证…</p><div id="widget"></div></section>
+  <button id="retry" hidden>重新验证</button><button id="back" hidden>返回 Telegram，重新发送消息</button>
+  <p class="privacy">验证用于减少自动化骚扰，不能完全阻止真人广告。必要身份校验由 Telegram 和 Cloudflare Turnstile 提供；本页面不加入广告或额外统计。</p>
+  <noscript>请启用 JavaScript，并从 Telegram 机器人中的验证按钮打开本页。</noscript>
+</main></body></html>

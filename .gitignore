@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+secrets/
+data/
+backups/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.lockdir/
+node_modules/
+coverage/
+.DS_Store

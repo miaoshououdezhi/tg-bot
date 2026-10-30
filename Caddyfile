@@ -1,0 +1,16 @@
+{
+	email {$ACME_EMAIL}
+}
+{$VERIFY_DOMAIN} {
+	encode zstd gzip
+	request_body {
+		max_size 16KB
+	}
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "no-referrer"
+		-Server
+	}
+	reverse_proxy bot:8080
+}

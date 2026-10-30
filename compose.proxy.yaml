@@ -1,0 +1,31 @@
+# 已有反向代理时独立使用：docker compose -f compose.proxy.yaml up -d --build
+name: tg-bot
+services:
+  bot:
+    build: .
+    init: true
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      HOST: 0.0.0.0
+      PORT: '8080'
+      DB_PATH: /app/data/bot.sqlite
+    ports:
+      - '127.0.0.1:8080:8080'
+    volumes:
+      - bot-data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 50s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+volumes:
+  bot-data:
